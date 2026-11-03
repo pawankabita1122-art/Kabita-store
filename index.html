@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kabita Beauty and Clothing Store</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <h1 class="logo">Kabita <span>Beauty & Clothing</span></h1>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="admin.html" class="admin-link">Admin</a>
+      </nav>
+      <a href="https://wa.me/9779800000000" class="btn-wa" target="_blank">WhatsApp</a>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="container hero-content">
+      <h2>Beauty & Fashion,<br>Ekai Thau ma</h2>
+      <p>Premium cosmetics ra trendy clothing — tapai ko style, tapai ko glow.</p>
+      <a href="#shop" class="btn">Shop Now</a>
+    </div>
+  </section>
+
+  <section id="shop" class="shop">
+    <div class="container">
+      <h2 class="section-title">Our Collection</h2>
+
+      <div class="tabs">
+        <button class="tab active" data-cat="all">All</button>
+        <button class="tab" data-cat="clothing">Clothing</button>
+        <button class="tab" data-cat="cosmetics">Cosmetics</button>
+      </div>
+
+      <div id="productGrid" class="product-grid">
+        <p id="loadingMsg" style="text-align:center; grid-column:1/-1;">Loading products...</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="container about-content">
+      <h2 class="section-title">About Us</h2>
+      <p>Kabita Beauty and Clothing Store ma tapai lai swagat cha! Hami premium quality cosmetics ra trendy clothing ekai thau ma pradan garchau.</p>
+      <p>✔ Quality products &nbsp; ✔ Affordable price &nbsp; ✔ Fast delivery</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="section-title">Contact Us</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p>📍 Kathmandu, Nepal</p>
+          <p>📞 +977 9800000000</p>
+          <p>📧 kabitastore@gmail.com</p>
+          <p>🕘 Sun - Fri: 9AM - 7PM</p>
+        </div>
+        <form class="contact-form" onsubmit="sendMsg(event)">
+          <input type="text" placeholder="Your Name" required>
+          <input type="email" placeholder="Your Email" required>
+          <textarea placeholder="Your Message" rows="4" required></textarea>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Kabita Beauty and Clothing Store. All rights reserved.</p>
+  </footer>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
