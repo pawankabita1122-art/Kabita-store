@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - Kabita Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="background: #fffaf7; padding: 20px; font-family: sans-serif;">
+
+  <!-- LOGIN FORM -->
+  <div id="loginSection" style="max-width: 400px; margin: 50px auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+    <h2 style="text-align: center; color: #b56576;">Admin Login</h2>
+    <input type="email" id="email" placeholder="Email" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+    <input type="password" id="password" placeholder="Password" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+    <button onclick="login()" style="width: 100%; padding: 12px; background: #b56576; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">Login</button>
+    <p id="errorMsg" style="color: red; text-align: center; margin-top: 10px;"></p>
+  </div>
+
+  <!-- ADMIN DASHBOARD -->
+  <div id="adminSection" style="display: none; max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+      <h2 style="color: #b56576;">Add New Product</h2>
+      <button onclick="logout()" style="background: red; color: white; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer;">Logout</button>
+    </div>
+    
+    <input type="text" id="pName" placeholder="Product Name" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+    <input type="number" id="pPrice" placeholder="Price (Rs.)" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+    <input type="text" id="pImage" placeholder="Image URL (Optional)" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+    
+    <select id="pCategory" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+      <option value="clothing">Clothing</option>
+      <option value="cosmetics">Cosmetics</option>
+    </select>
+    
+    <button onclick="addProduct()" style="width: 100%; padding: 12px; background: #25D366; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">Add Product</button>
+    
+    <div id="adminMsg" style="text-align: center; margin-top: 10px; font-weight: bold;"></div>
+  </div>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>
