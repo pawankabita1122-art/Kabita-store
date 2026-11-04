@@ -139,12 +139,13 @@
         <p style="margin: 0;">&copy; 2024 Kabita Beauty & Clothing. All rights reserved.</p>
     </footer>
 
-    <!-- Firebase को कोड सुरु -->
+    <!-- Firebase कोड सुरु -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
         import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
         // ⚠️ यहाँ तपाईंको Firebase Config राख्नुहोस् (तपाईंको admin.js बाट कपी गरेर)
+        // मैले यसलाई स्क्रिनशटको आधारमा अनुमान गरेको छु, तपाईंको admin.js मा जे छ, त्यही राख्नुहोस्।
         const firebaseConfig = {
             apiKey: "YOUR_API_KEY_HERE",
             authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
@@ -159,13 +160,11 @@
 
         async function loadProducts() {
             const productList = document.getElementById('product-list');
-            productList.innerHTML = ''; // लोड हुँदैछ हटाउने
+            productList.innerHTML = ''; 
 
             try {
-                // ⚠️ यहाँ ध्यान दिनुहोस्: "wbbEy6elum" को ठाउँमा तपाईंको Firebase मा भएको Collection को नाम राख्नुहोस्।
-                // मैले तपाईंले पहिले पठाउनुभएको स्क्रिनशट हेरेर यो नाम राखेको छु। 
-                // यदि तपाईंको फोल्डरको नाम अरु केही छ भने, यो शब्द फेर्नुहोस्।
-                const querySnapshot = await getDocs(collection(db, "wbbEy6elum"));
+                // तपाईंको स्क्रिनशटमा भएको नाम ठ्याक्कै राखेको छु
+                const querySnapshot = await getDocs(collection(db, "wbbEy6elumnmrOUexiGa"));
                 
                 if (querySnapshot.empty) {
                     productList.innerHTML = '<p style="color: #777; text-align: center; width: 100%;">अहिलेसम्म कुनै सामान थपिएको छैन।</p>';
@@ -187,13 +186,13 @@
 
             } catch (error) {
                 console.error("डेटा तान्न समस्या भयो: ", error);
-                productList.innerHTML = '<p style="color: red; text-align: center; width: 100%;">सामान लोड गर्न सकिएन। (Firebase Rules वा Config मिलाउनुहोस्)</p>';
+                productList.innerHTML = '<p style="color: red; text-align: center; width: 100%;">सामान लोड गर्न सकिएन। (Firebase Config वा Rules मिलाउनुहोस्)</p>';
             }
         }
 
         loadProducts();
     </script>
-    <!-- Firebase को कोड अन्त्य -->
+    <!-- Firebase कोड अन्त्य -->
 
 </body>
 </html>
