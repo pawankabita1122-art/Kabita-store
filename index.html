@@ -141,18 +141,18 @@
 
     <!-- Firebase कोड सुरु -->
     <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-        import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+        import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-        // ⚠️ यहाँ तपाईंको Firebase Config राख्नुहोस् (तपाईंको admin.js बाट कपी गरेर)
-        // मैले यसलाई स्क्रिनशटको आधारमा अनुमान गरेको छु, तपाईंको admin.js मा जे छ, त्यही राख्नुहोस्।
+        // तपाईंको admin.js बाट कपी गरिएको Config
         const firebaseConfig = {
-            apiKey: "YOUR_API_KEY_HERE",
-            authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-            projectId: "YOUR_PROJECT_ID",
-            storageBucket: "YOUR_PROJECT_ID.appspot.com",
-            messagingSenderId: "YOUR_SENDER_ID",
-            appId: "YOUR_APP_ID"
+            apiKey: "AIzaSyC_UL-D3ij_eRmbsDwu40QIKKorR7nRfIQ",
+            authDomain: "kabita-beauty-and-clothing.firebaseapp.com",
+            projectId: "kabita-beauty-and-clothing",
+            storageBucket: "kabita-beauty-and-clothing.firebasestorage.app",
+            messagingSenderId: "153365876858",
+            appId: "1:153365876858:web:de37c2705e4e544b552bc3",
+            measurementId: "G-DMTTNESEYW"
         };
 
         const app = initializeApp(firebaseConfig);
@@ -163,11 +163,11 @@
             productList.innerHTML = ''; 
 
             try {
-                // तपाईंको स्क्रिनशटमा भएको नाम ठ्याक्कै राखेको छु
-                const querySnapshot = await getDocs(collection(db, "wbbEy6elumnmrOUexiGa"));
+                // अब हामी admin.js ले सेभ गर्ने ठ्याक्कै "products" फोल्डर खोज्नेछौं
+                const querySnapshot = await getDocs(collection(db, "products"));
                 
                 if (querySnapshot.empty) {
-                    productList.innerHTML = '<p style="color: #777; text-align: center; width: 100%;">अहिलेसम्म कुनै सामान थपिएको छैन।</p>';
+                    productList.innerHTML = '<p style="color: #777; text-align: center; width: 100%;">अहिलेसम्म कुनै सामान थपिएको छैन। (Admin panel bata naya saman halnu hos)</p>';
                     return;
                 }
 
@@ -186,7 +186,7 @@
 
             } catch (error) {
                 console.error("डेटा तान्न समस्या भयो: ", error);
-                productList.innerHTML = '<p style="color: red; text-align: center; width: 100%;">सामान लोड गर्न सकिएन। (Firebase Config वा Rules मिलाउनुहोस्)</p>';
+                productList.innerHTML = '<p style="color: red; text-align: center; width: 100%;">सामान लोड गर्न सकिएन। (Firebase Rules Check garnus)</p>';
             }
         }
 
