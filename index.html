@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kabita Beauty and Clothing Store</title>
-    <!-- तपाईंको पुरानो CSS फाइलको लिङ्क -->
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- Header / Navigation -->
     <header>
         <div class="container nav">
             <h1 class="logo">Kabita <span>Beauty & Clothing</span></h1>
@@ -24,10 +23,30 @@
         </div>
     </header>
 
-    <!-- यदि तपाईंको पहिलेको कोडमा Home, Shop, About को सेक्सन थियो भने, यहाँ ती कोडहरू राख्नुहोला -->
+    <!-- Home / Welcome Section -->
+    <section id="home" class="container" style="padding: 40px 20px; text-align: center;">
+        <h2>Welcome to Kabita Beauty & Clothing</h2>
+        <p>तपाईंको मनपर्ने कपडा र ब्युटी प्रडक्टहरू यहीँ पाउनुहुनेछ।</p>
+    </section>
+
+    <!-- Shop / Products Section -->
+    <section id="shop" class="container" style="padding: 40px 20px;">
+        <h2 style="text-align: center;">Our Products (हाम्रा सामानहरू)</h2>
+        <!-- यहाँ तपाईंको पहिलेको कोडमा भएका सामानहरूको लिस्ट (Grid) थियो भने यहाँ राख्नुहोला। 
+             तर तपाईंको पुरानो कोड हेर्न नमिलेकोले मैले एउटा साधारण लेआउट मात्र राखेको छु। -->
+        <div style="text-align: center; margin-top: 20px; color: #666;">
+            <p>सामानहरूको फोटो र विवरण यहाँ देखिनेछ। (तपाईंको पुरानो कोड फर्काउनुभयो भने यो भाग पहिले जस्तै हुन्छ)</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="container" style="padding: 40px 20px; text-align: center;">
+        <h2>About Us (हाम्रो बारेमा)</h2>
+        <p>कबिता ब्युटी एण्ड क्लोथिङ स्टोरमा स्वागत छ। हामी उच्च गुणस्तरका कपडा र ब्युटी सामानहरू उपलब्ध गराउँछौं।</p>
+    </section>
 
     <!-- Contact Section (WhatsApp र Location सहित) -->
-    <section id="contact" class="container" style="padding: 50px 20px; text-align: center; font-family: 'Poppins', sans-serif;">
+    <section id="contact" class="container" style="padding: 50px 20px; text-align: center; background-color: #f9f9f9;">
         <h2 style="margin-bottom: 10px;">सम्पर्क गर्नुहोस् (Contact Us)</h2>
         <p style="margin-bottom: 30px;">हामीलाई सोध्नु वा अर्डर गर्न तलको बटनमा क्लिक गर्नुहोस्।</p>
         
@@ -38,7 +57,7 @@
                 💬 WhatsApp मा सम्पर्क गर्नुहोस्
             </a>
 
-            <!-- Location / Google Maps बटन (तपाईंको साँचो लिङ्क राखिएको) -->
+            <!-- Location / Google Maps बटन -->
             <a href="https://maps.app.goo.gl/JuE2cHxjNaCyDsc8A?g_st=ic" target="_blank" style="background-color: #4285F4; color: white; padding: 15px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; width: 280px; box-sizing: border-box; display: block; font-size: 16px;">
                 📍 हाम्रो पसलको Location हेर्नुहोस्
             </a>
@@ -50,6 +69,11 @@
             
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 20px; background-color: #333; color: white; margin-top: 20px;">
+        <p>&copy; 2024 Kabita Beauty & Clothing. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
