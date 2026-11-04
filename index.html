@@ -6,74 +6,122 @@
     <title>Kabita Beauty and Clothing Store</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* नयाँ ब्याकग्राउन्ड र लेआउट सेटिङ */
+        body {
+            background-color: #fafafa;
+            font-family: 'Poppins', sans-serif;
+        }
+        #home {
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%); /* नरम गुलाबी रङ */
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+        }
+        #home h2 {
+            color: #880e4f;
+            font-size: 24px;
+        }
+        #home p {
+            color: #4a148c;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .shop-btn {
+            background-color: #ad1457;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        .shop-btn:hover {
+            background-color: #880e4f;
+        }
+        #shop {
+            padding: 40px 20px;
+            background-color: white;
+            margin: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        #product-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
 
     <!-- Header / Navigation -->
-    <header>
-        <div class="container nav">
+    <header style="background: white; padding: 15px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+        <div class="container nav" style="text-align: center;">
             <h1 class="logo" style="font-size: 24px; margin-bottom: 5px; color: #a35d6a;">Kabita</h1>
             <p style="font-size: 12px; letter-spacing: 2px; margin-top: 0; color: #b5934d; font-weight: bold;">BEAUTY & CLOTHING</p>
             <nav style="margin-top: 15px;">
-                <a href="#home">Home</a>
-                <a href="#shop">Shop</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-                <a href="admin.html" class="admin-link">Admin</a>
+                <a href="#home" style="margin: 0 10px; text-decoration: none; color: #333;">Home</a>
+                <a href="#shop" style="margin: 0 10px; text-decoration: none; color: #333;">Shop</a>
+                <a href="#about" style="margin: 0 10px; text-decoration: none; color: #333;">About</a>
+                <a href="#contact" style="margin: 0 10px; text-decoration: none; color: #333;">Contact</a>
+                <a href="admin.html" class="admin-link" style="margin: 0 10px; text-decoration: none; color: #ad1457;">Admin</a>
             </nav>
         </div>
     </header>
 
-    <!-- Home Section -->
-    <section id="home" class="container" style="padding: 40px 20px; text-align: center;">
-        <h2 style="font-size: 22px; margin-bottom: 10px;">Welcome to Kabita Beauty & Clothing</h2>
-        <p style="color: #555;">तपाईंको मनपर्ने कपडा र ब्युटी प्रडक्टहरू यहीँ पाउनुहुनेछ।</p>
+    <!-- Home Section (नयाँ डिजाइन) -->
+    <section id="home">
+        <div class="container">
+            <h2>Beauty & Fashion, Ekai Thau ma</h2>
+            <p>Premium cosmetics ra trendy clothing — tapai ko style, tapai ko glow.</p>
+            <a href="#shop" class="shop-btn">Shop Now</a>
+        </div>
     </section>
 
-    <!-- Shop Section (सामानहरू देखिने ठाउँ) -->
-    <section id="shop" class="container" style="padding: 40px 20px; background-color: #fbfbfb;">
-        <h2 style="text-align: center; margin-bottom: 20px;">Our Products (हाम्रा सामानहरू)</h2>
+    <!-- Shop Section -->
+    <section id="shop" class="container">
+        <h2 style="text-align: center; color: #333; margin-bottom: 10px;">Our Products (हाम्रा सामानहरू)</h2>
         
-        <!-- यहाँ तपाईंले एडमिन प्यानलबाट हालेका सामानहरू लोड हुन्छन् (script.js को मद्दतले) -->
-        <div id="product-list" style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+        <!-- यहाँ तपाईंले एडमिन प्यानलबाट हालेका सामानहरू लोड हुन्छन् -->
+        <div id="product-list">
             <!-- सामानहरू यहाँ देखिनेछन् -->
             <p style="color: #777; text-align: center; width: 100%;">सामानहरू लोड हुँदैछन्...</p>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="container" style="padding: 40px 20px; text-align: center;">
-        <h2 style="margin-bottom: 15px;">About Us (हाम्रो बारेमा)</h2>
+    <section id="about" class="container" style="padding: 30px 20px; text-align: center; background: white; margin: 20px; border-radius: 15px;">
+        <h2 style="margin-bottom: 15px; color: #333;">About Us (हाम्रो बारेमा)</h2>
         <p style="color: #555; line-height: 1.6;">कबिता ब्युटी एण्ड क्लोथिङ स्टोरमा स्वागत छ। हामी उच्च गुणस्तरका कपडा र ब्युटी सामानहरू उपलब्ध गराउँछौं।</p>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="container" style="padding: 50px 20px; text-align: center; background-color: #fff8f8;">
-        <h2 style="margin-bottom: 10px;">सम्पर्क गर्नुहोस् (Contact Us)</h2>
+    <section id="contact" class="container" style="padding: 40px 20px; text-align: center; background-color: #fff8f8; margin: 20px; border-radius: 15px;">
+        <h2 style="margin-bottom: 10px; color: #333;">सम्पर्क गर्नुहोस् (Contact Us)</h2>
         <p style="margin-bottom: 30px; color: #555;">हामीलाई सोध्नु वा अर्डर गर्न तलको बटनमा क्लिक गर्नुहोस्।</p>
         
         <div style="display: flex; flex-direction: column; gap: 15px; align-items: center;">
-            
             <!-- WhatsApp बटन -->
-            <a href="https://wa.me/9779767892265" target="_blank" style="background-color: #25D366; color: white; padding: 15px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; width: 280px; box-sizing: border-box; display: block; font-size: 16px;">
+            <a href="https://wa.me/9779767892265" target="_blank" style="background-color: #25D366; color: white; padding: 15px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; width: 100%; max-width: 300px; box-sizing: border-box; display: block; font-size: 16px;">
                 💬 WhatsApp मा सम्पर्क गर्नुहोस्
             </a>
-
-            <!-- Location / Google Maps बटन -->
-            <a href="https://maps.app.goo.gl/JuE2cHxjNaCyDsc8A?g_st=ic" target="_blank" style="background-color: #4285F4; color: white; padding: 15px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; width: 280px; box-sizing: border-box; display: block; font-size: 16px;">
+            <!-- Location बटन -->
+            <a href="https://maps.app.goo.gl/JuE2cHxjNaCyDsc8A?g_st=ic" target="_blank" style="background-color: #4285F4; color: white; padding: 15px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; width: 100%; max-width: 300px; box-sizing: border-box; display: block; font-size: 16px;">
                 📍 हाम्रो पसलको Location हेर्नुहोस्
             </a>
-
-            <!-- ठेगाना टेक्स्ट -->
+            <!-- ठेगाना -->
             <p style="margin-top: 10px; font-size: 14px; color: #555;">
                 <strong>ठेगाना:</strong> चन्द्रागिरी-१०, सतुङ्गल, काठमाडौं
             </p>
-            
         </div>
     </section>
 
     <!-- Footer -->
-    <footer style="text-align: center; padding: 20px; background-color: #333; color: white;">
+    <footer style="text-align: center; padding: 20px; background-color: #333; color: white; margin-top: 20px;">
         <p style="margin: 0;">&copy; 2024 Kabita Beauty & Clothing. All rights reserved.</p>
     </footer>
 
