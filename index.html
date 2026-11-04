@@ -7,14 +7,12 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* नयाँ ब्याकग्राउन्ड र लेआउट सेटिङ */
-        
         body {
             background-color: #fafafa;
             font-family: 'Poppins', sans-serif;
         }
         #home {
-            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%); /* नरम गुलाबी रङ */
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
             padding: 60px 20px;
             text-align: center;
             border-radius: 0 0 20px 20px;
@@ -55,7 +53,6 @@
             justify-content: center;
             margin-top: 20px;
         }
-        /* सामानको कार्ड डिजाइन */
         .product-card {
             border: 1px solid #ddd;
             padding: 15px;
@@ -86,7 +83,6 @@
 </head>
 <body>
 
-    <!-- Header / Navigation -->
     <header style="background: white; padding: 15px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
         <div class="container nav" style="text-align: center;">
             <h1 class="logo" style="font-size: 24px; margin-bottom: 5px; color: #a35d6a;">Kabita</h1>
@@ -101,7 +97,6 @@
         </div>
     </header>
 
-    <!-- Home Section -->
     <section id="home">
         <div class="container">
             <h2>Beauty & Fashion, Ekai Thau ma</h2>
@@ -110,55 +105,46 @@
         </div>
     </section>
 
-    <!-- Shop Section -->
     <section id="shop" class="container">
         <h2 style="text-align: center; color: #333; margin-bottom: 10px;">Our Products (हाम्रा सामानहरू)</h2>
         
-        <!-- यहाँ सामानहरू लोड हुन्छन् -->
         <div id="product-list">
             <p style="color: #777; text-align: center; width: 100%;">सामानहरू लोड हुँदैछन्...</p>
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="container" style="padding: 30px 20px; text-align: center; background: white; margin: 20px; border-radius: 15px;">
         <h2 style="margin-bottom: 15px; color: #333;">About Us (हाम्रो बारेमा)</h2>
         <p style="color: #555; line-height: 1.6;">कबिता ब्युटी एण्ड क्लोथिङ स्टोरमा स्वागत छ। हामी उच्च गुणस्तरका कपडा र ब्युटी सामानहरू उपलब्ध गराउँछौं।</p>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="container" style="padding: 40px 20px; text-align: center; background-color: #fff8f8; margin: 20px; border-radius: 15px;">
         <h2 style="margin-bottom: 10px; color: #333;">सम्पर्क गर्नुहोस् (Contact Us)</h2>
         <p style="margin-bottom: 30px; color: #555;">हामीलाई सोध्नु वा अर्डर गर्न तलको बटनमा क्लिक गर्नुहोस्।</p>
         
         <div style="display: flex; flex-direction: column; gap: 15px; align-items: center;">
-            <!-- WhatsApp बटन -->
             <a href="https://wa.me/9779767892265" target="_blank" style="background-color: #25D366; color: white; padding: 15px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; width: 100%; max-width: 300px; box-sizing: border-box; display: block; font-size: 16px;">
                 💬 WhatsApp मा सम्पर्क गर्नुहोस्
             </a>
-            <!-- Location बटन -->
             <a href="https://maps.app.goo.gl/JuE2cHxjNaCyDsc8A?g_st=ic" target="_blank" style="background-color: #4285F4; color: white; padding: 15px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; width: 100%; max-width: 300px; box-sizing: border-box; display: block; font-size: 16px;">
                 📍 हाम्रो पसलको Location हेर्नुहोस्
             </a>
-            <!-- ठेगाना -->
             <p style="margin-top: 10px; font-size: 14px; color: #555;">
                 <strong>ठेगाना:</strong> चन्द्रागिरी-१०, सतुङ्गल, काठमाडौं
             </p>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer style="text-align: center; padding: 20px; background-color: #333; color: white; margin-top: 20px;">
         <p style="margin: 0;">&copy; 2024 Kabita Beauty & Clothing. All rights reserved.</p>
     </footer>
 
-    <!-- Firebase र डेटा तान्ने स्क्रिप्ट -->
+    <!-- Firebase को कोड सुरु -->
     <script type="module">
-        // Firebase को मोड्युलहरू इम्पोर्ट गर्ने
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
         import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
-        // ⚠️ यहाँ तपाईंको Firebase Config राख्नुहोस् (admin.js बाट कपी गर्नुहोस्)
+        // ⚠️ यहाँ तपाईंको Firebase Config राख्नुहोस् (तपाईंको admin.js बाट कपी गरेर)
         const firebaseConfig = {
             apiKey: "YOUR_API_KEY_HERE",
             authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
@@ -168,18 +154,18 @@
             appId: "YOUR_APP_ID"
         };
 
-        // Firebase सुरु गर्ने
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
 
-        // डेटा तान्ने फंक्शन
         async function loadProducts() {
             const productList = document.getElementById('product-list');
-            productList.innerHTML = ''; // लोड हुँदैछ भन्ने हटाउने
+            productList.innerHTML = ''; // लोड हुँदैछ हटाउने
 
             try {
-                // यदि तपाईंको collection को नाम फरक छ भने "products" फेर्नुहोस्
-                const querySnapshot = await getDocs(collection(db, "products")); 
+                // ⚠️ यहाँ ध्यान दिनुहोस्: "wbbEy6elum" को ठाउँमा तपाईंको Firebase मा भएको Collection को नाम राख्नुहोस्।
+                // मैले तपाईंले पहिले पठाउनुभएको स्क्रिनशट हेरेर यो नाम राखेको छु। 
+                // यदि तपाईंको फोल्डरको नाम अरु केही छ भने, यो शब्द फेर्नुहोस्।
+                const querySnapshot = await getDocs(collection(db, "wbbEy6elum"));
                 
                 if (querySnapshot.empty) {
                     productList.innerHTML = '<p style="color: #777; text-align: center; width: 100%;">अहिलेसम्म कुनै सामान थपिएको छैन।</p>';
@@ -189,7 +175,6 @@
                 querySnapshot.forEach((doc) => {
                     const product = doc.data();
                     
-                    // सामानको डिजाइन (HTML)
                     productList.innerHTML += `
                         <div class="product-card">
                             <img src="${product.image || 'https://via.placeholder.com/200'}" alt="${product.name}">
@@ -202,12 +187,13 @@
 
             } catch (error) {
                 console.error("डेटा तान्न समस्या भयो: ", error);
-                productList.innerHTML = '<p style="color: red; text-align: center; width: 100%;">सामानहरू लोड गर्न सकिएन। Firebase Rules जाँच्नुहोस्।</p>';
+                productList.innerHTML = '<p style="color: red; text-align: center; width: 100%;">सामान लोड गर्न सकिएन। (Firebase Rules वा Config मिलाउनुहोस्)</p>';
             }
         }
 
-        // पेज लोड हुने बित्तिकै सामान तान्न सुरु गर्ने
         loadProducts();
     </script>
+    <!-- Firebase को कोड अन्त्य -->
+
 </body>
 </html>
